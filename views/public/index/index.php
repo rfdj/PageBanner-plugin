@@ -53,7 +53,7 @@ jQuery(function(){
 		
 		var today = new Date();
 		var expireDate = new Date(today);
-		expireDate.setDate(today.getDate() + 5); // 5 days
+		expireDate.setDate(today.getDate() + 365); // 365 days
 		
 		// sets the cookie to 0
 		document.cookie = '<?php echo get_option('pb_cookie'); ?>=1; expires=' + expireDate.toGMTString() + '; path=/';
