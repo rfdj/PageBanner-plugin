@@ -56,7 +56,7 @@ jQuery(function(){
 		expireDate.setDate(today.getDate() + 365); // 365 days
 		
 		// sets the cookie to 0
-		document.cookie = '<?php echo get_option('pb_cookie'); ?>=1; expires=' + expireDate.toGMTString() + '; path=/';
+		document.cookie = 'pb_clicked=1; expires=' + expireDate.toGMTString() + '; path=/';
 	});
 });
 

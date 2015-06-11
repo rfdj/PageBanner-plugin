@@ -3,7 +3,6 @@ $page = get_option('pb_page_url');
 $text = get_option('pb_banner_text');
 $btn_text = get_option('pb_banner_button_text');
 $btn_url = get_option('pb_banner_button_url');
-$cookie = get_option('pb_cookie');
 if($text == '')
 	$text = 'Default';
 ?>
@@ -45,15 +44,6 @@ if($text == '')
         <?php echo get_view()->formText('pb_banner_button_url', $btn_url, array('class' => 'textinput')); ?>
         <p class="explanation">
             The destination of the main button.
-        </p>
-    </div>
-</div>
-<div class="field">
-    <?php echo get_view()->formLabel('pb_cookie', 'Cookie name', array('class'=>'two columns alpha')); ?>
-    <div class="inputs five columns">
-        <?php echo get_view()->formText('pb_cookie', $cookie, array('class' => 'textinput')); ?>
-        <p class="explanation">
-            Has to be changed for next banner. Expires in 5 days.
         </p>
     </div>
 </div>

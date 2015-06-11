@@ -32,8 +32,7 @@ class PageBannerPlugin extends Omeka_Plugin_AbstractPlugin
         'pb_show_public' => true,
 		'pb_banner_text' => 'Help mee deze pagina te verbeteren. Geef uw mening over deze pagina met 10 vragen.',
 		'pb_banner_button_text' => 'Help mee',
-		'pb_banner_button_url' => '',
-		'pb_cookie' => 'pb_clicked'
+		'pb_banner_button_url' => ''
 	);
 
 	
@@ -82,7 +81,6 @@ class PageBannerPlugin extends Omeka_Plugin_AbstractPlugin
     	set_option('pb_banner_text', $post['pb_banner_text']);
     	set_option('pb_banner_button_text', $post['pb_banner_button_text']);
     	set_option('pb_banner_button_url', $post['pb_banner_button_url']);
-    	set_option('pb_cookie', $post['pb_cookie']);
     }
 
 	/**
@@ -92,7 +90,7 @@ class PageBannerPlugin extends Omeka_Plugin_AbstractPlugin
 		
 		if (current_url() == get_option('pb_page_url') && (boolean)get_option('pb_show_public')){
 			
-			if(!isset($_COOKIE[get_option('pb_cookie')]) || $_COOKIE[get_option('pb_cookie')] == false){
+			if(!isset($_COOKIE['pb_clicked']) || $_COOKIE['pb_clicked'] == false){
 				include('views/public/index/index.php');
 			}
 			
